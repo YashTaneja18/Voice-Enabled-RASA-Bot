@@ -1,6 +1,6 @@
 # 🎙️ Voice-Enabled Word Meaning Chatbot 🤖📖  
 
-This is a **Rasa-powered chatbot** that provides **word meanings, definitions, and example sentences** using **voice input and output**. Users can **speak or type a word**, and the bot responds with its meaning using **Oxford Dictionaries API**. The chatbot supports **text-to-speech (TTS) and speech recognition** for a seamless user experience.I have attached the link to the Google drive that has a sample showing the working of bot.
+This is a **Rasa-powered chatbot** that provides **word meanings, definitions, and example sentences** using **voice input and output**. Users can **speak or type a word**, and the bot responds with its meaning using **Oxford Dictionaries API**. The chatbot supports **text-to-speech (TTS) and speech recognition** for a seamless user experience. I have attached the link to the Google drive that has a sample showing the working of bot.
 
 ---
 
