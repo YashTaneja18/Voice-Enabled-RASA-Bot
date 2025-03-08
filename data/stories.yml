@@ -1,0 +1,32 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: mood_great
+  - action: utter_greet
+
+
+  
+
+
+
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: word_mean
+#   - action: word_mean_form
+#   - active_loop: word_mean_form
+#   - slot_was_set:
+#     - requested_slot: word
+#   - intent: my_word
+#     entities:
+#     - word: articulate
+#   - slot_was_set:
+#     - word: articulate
+#   - action: word_mean_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_word_say

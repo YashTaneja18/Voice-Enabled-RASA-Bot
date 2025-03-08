@@ -1,0 +1,75 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate word meaning form
+  steps:
+  - intent: word_mean
+  - action: word_mean_form
+  - active_loop: word_mean_form
+
+- rule: Submit the word meaning form
+  condition:
+  - active_loop: word_mean_form
+  steps:
+  - action: word_mean_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_word_say
+
+- rule: Activate info form
+  steps:
+  - intent: provide_info
+  - action: info
+  - active_loop: info
+
+- rule: Interrupt handle
+  condition:
+  - active_loop: info
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+  - action: info
+
+- rule: provide info
+  condition:
+  - active_loop: info
+  steps:
+  - action: info
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_say_info
+
+- rule: Reset info
+  steps:
+  - intent: Reset
+  - action: action_reset_info
+  - action: utter_confirm
+
+- rule: Start Excel form
+  steps:
+  - intent: provide_excel_data
+  - action: excel_info
+  - active_loop: excel_info
+
+- rule: Submit excel form
+  condition: 
+  - active_loop: excel_info
+  steps:
+  - action: excel_info
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_say_excel_info
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

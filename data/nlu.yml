@@ -1,0 +1,191 @@
+version: "3.1"
+nlu:
+- regex: word
+  examples: |
+    - [a-zA-Z]+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: repeat_number
+  examples: |
+    - Repeat my number
+    - can you tell me my number
+    - what is my phone number
+    - can you please repeat my phone number
+- intent: phone
+  examples: |
+    - Here is my number [1234567890](number)
+    - my phone number is [9887766554](number)
+    - [1223344556](number)
+- intent: my_name
+  examples: |
+    - My name is [Rahul](name)
+    - I am [Ananya](name)
+    - Call me [John](name)
+    - [Aisha](name) is my name
+    - You can call me [Raj](name)
+
+- intent: Reset
+  examples: |
+    - Reset my data
+    - restart
+    - Please reset
+    - begin again
+    - start over
+- intent: my_gender
+  examples: |
+    - I am a [male](gender)
+    - I am a [female](gender)
+    - My gender is [non-binary](gender)
+    - I identify as [male](gender)
+    - I am [female](gender)
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: word_mean
+  examples: |
+    - I want to ask word meaning
+    - Please provide word meaning
+    - What does this word mean
+    - Can you tell me word meaning
+    - Can you define this word?
+    - What is the definition of this word?
+    - Explain the meaning of this word.
+    - How do you define this word?
+    - Tell me the meaning of this word.
+    - Define a word for me.
+    - I need the meaning of a word.
+    - Please explain a word in simple terms.
+    - What does a word stand for?
+    - Can you give me a definition of a word?
+    - How can I understand a word better?
+    - Can you break down the meaning of a word?
+    - Tell me what a word means with an example.
+    - Whats the dictionary meaning of a word?
+    - Can you help me understand a word?
+    - I want to learn the meaning of a word.
+
+
+- intent: provide_info
+  examples: |
+    - I want to tell my info
+    - I want to provide my info
+    - My details
+    - My data
+
+- intent: my_word
+  examples: |
+    - [inflict](word) meaning
+    - [Articulate](word) meaning
+    - meaning of [jump](word)
+    - define [inure](word)
+    - Define [Inure](word)
+    - Meaning of [expound](word)
+    - define [articulate](word)
+    - What does [resilient](word) mean?
+    - Explain the meaning of [serendipity](word).
+    - Can you define [ephemeral](word)?
+    - What is the definition of [lucid](word)?
+    - Tell me the meaning of [cogent](word).
+    - Define the word [perseverance](word).
+    - What does [conundrum](word) mean?
+    - Give me the definition of [gregarious](word).
+    - What is the meaning of [ostentatious](word)?
+    - Could you explain what [mellifluous](word) means?
+    - Define [equanimity](word).
+    - Can you tell me what [benevolent](word) means?
+    - What does [nonchalant](word) mean?
+    - Tell me the meaning of [meticulous](word).
+    - Explain the definition of [fortuitous](word).
+    - Define [pragmatic](word) for me.
+    - Give me a definition of [loquacious](word).
+    - What is the meaning of [inquisitive](word)?
+    - Explain what [vivacious](word) means.
+    - Can you tell me what [insidious](word) means?
+
+- intent: provide_excel_data
+  examples: |
+    - I want to provide excel data
+    - Please insert my data into excel
+    - Providing excel data
+    - excel data entry
+    - insert data into excel
+    - insert data into sheets
+    - excel sheet data entry
