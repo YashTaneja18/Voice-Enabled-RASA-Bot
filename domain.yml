@@ -1,0 +1,138 @@
+version: '3.1'
+intents:
+- affirm
+- Reset
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- my_gender
+- my_name
+- my_word
+- phone
+- repeat_number
+- provide_info
+- word_mean
+- provide_excel_data
+
+entities:
+- word
+- number
+- name
+- gender
+
+responses:
+  utter_ask_number:
+  - text: Can you please provide your phone number?
+  utter_ask_name:
+  - text: What is your name?
+  utter_ask_gender:
+  - text: Your gender please
+  utter_ask_word:
+  - text: Type the word to find meaning
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_confirm:
+  - text: All the data has been reset
+  utter_ask_user_name:
+  - text: What is your name
+  utter_ask_user_number:
+  - text: What is your phone number
+  utter_ask_user_occ:
+  - text: Your occupation
+  utter_ask_user_email:
+  - text: Please provide your email id
+
+slots:
+  number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: number
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: gender
+  word:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: word
+  user_name:
+    type: any
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: excel_info
+        requested_slot: user_name
+  user_number:
+    type: any
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: excel_info
+          requested_slot: user_number
+  user_email:
+    type: any
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: excel_info
+          requested_slot: user_email
+  user_occ:
+    type: any
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: excel_info
+          requested_slot: user_occ
+
+forms:
+  info:
+    required_slots:
+    - name
+    - number
+    - gender
+  word_mean_form:
+    required_slots:
+    - word
+  excel_info:
+    required_slots:
+    - user_name
+    - user_number
+    - user_email
+    - user_occ
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_word_say
+- action_say_number
+- action_say_info
+- validate_info
+- action_reset_info
+- action_say_excel_info
